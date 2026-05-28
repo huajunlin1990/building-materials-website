@@ -63,7 +63,7 @@ export const Header = () => {
               variant="primary"
               className="ml-4"
             >
-              <Link to="/contact">立即咨询</Link>
+              <Link to="/contact">联系我们</Link>
             </Button>
           </nav>
 

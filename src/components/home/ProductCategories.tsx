@@ -12,7 +12,7 @@ export const ProductCategories = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Section.Header
           label="产品系列"
-          title="核心产品"
+          title="爆款产品"
           subtitle="高品质新材料，满足各类建筑需求"
         />
 

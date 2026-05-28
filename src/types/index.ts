@@ -33,6 +33,7 @@ export interface News {
   author: string;
   content: string;
   image: string;
+  summary: string;
 }
 
 export interface CompanyStrength {

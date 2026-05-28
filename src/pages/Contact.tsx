@@ -4,10 +4,10 @@ import { useState } from 'react';
 import { Seo } from '../components/common/Seo';
 
 const contactInfo = [
-  { icon: Phone, label: '服务热线', value: '400-888-8888', subValue: '7x24小时服务' },
+  { icon: Phone, label: '服务热线', value: '18926096868', subValue: '工作日 8:00-18:00' },
   { icon: Mail, label: '电子邮箱', value: 'contact@jingfanshuo.com', subValue: '24小时内回复' },
-  { icon: MapPin, label: '公司地址', value: '深圳市宝安区新材料产业园A栋', subValue: '欢迎莅临参观' },
-  { icon: Clock, label: '营业时间', value: '周一至周日 8:00-20:00', subValue: '节假日正常营业' },
+  { icon: MapPin, label: '公司地址', value: '深圳市宝安区沙井街道壆岗社区壆岗大道文体中心商业楼2、3栋611', subValue: '欢迎莅临参观' },
+  { icon: Clock, label: '营业时间', value: '周一至周五 8:30-17:30', subValue: '周末及节假日休息' },
 ];
 
 export const Contact = () => {
@@ -18,18 +18,44 @@ export const Contact = () => {
     email: '',
     message: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert('感谢您的留言！我们会尽快与您联系。');
-    setFormData({ name: '', company: '', phone: '', email: '', message: '' });
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+    
+    try {
+      const response = await fetch('https://api.example.com/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        alert('感谢您的留言！我们会尽快与您联系。');
+        setFormData({ name: '', company: '', phone: '', email: '', message: '' });
+      } else {
+        throw new Error('提交失败');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+      console.error('表单提交错误:', error);
+      alert('提交失败，请稍后重试或直接拨打服务热线。');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <>
       <Seo
         title="联系我们"
-        description="联系深圳市晶凡硕新材料科技有限公司，获取专业的建材咨询和服务支持。服务热线：400-888-8888"
+        description="联系深圳市晶凡硕新材料科技有限公司，获取专业的建材咨询和服务支持。服务热线：18926096868"
         keywords={['联系我们', '联系方式', '在线留言', '深圳建材', '晶凡硕', '服务热线']}
       />
       <div className="py-16">
@@ -137,10 +163,11 @@ export const Contact = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-primary hover:bg-primary/90 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 shadow-primary hover:shadow-lg flex items-center justify-center gap-2"
+                  disabled={isSubmitting}
+                  className="w-full bg-primary hover:bg-primary/90 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 shadow-primary hover:shadow-lg flex items-center justify-center gap-2"
                 >
                   <Send size={18} />
-                  提交留言
+                  {isSubmitting ? '提交中...' : '提交留言'}
                 </button>
               </form>
             </motion.div>
@@ -157,7 +184,7 @@ export const Contact = () => {
             <div className="bg-white rounded-lg h-64 flex items-center justify-center">
               <div className="text-center text-gray-500">
                 <MapPin className="w-16 h-16 mx-auto mb-4 text-gray-300" />
-                <p>深圳市宝安区新材料产业园A栋</p>
+                <p>深圳市宝安区沙井街道壆岗社区壆岗大道文体中心商业楼2、3栋611</p>
                 <p className="text-sm">欢迎莅临参观指导</p>
               </div>
             </div>

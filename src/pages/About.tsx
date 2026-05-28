@@ -3,10 +3,10 @@ import { Award, Users, Globe, TrendingUp } from 'lucide-react';
 import { Seo } from '../components/common/Seo';
 
 const stats = [
-  { icon: Users, value: '500+', label: '服务客户' },
-  { icon: Globe, value: '30+', label: '覆盖城市' },
-  { icon: Award, value: '20+', label: '行业奖项' },
-  { icon: TrendingUp, value: '15年', label: '行业经验' },
+  { icon: Users, value: '200+', label: '服务客户' },
+  { icon: Globe, value: '10+', label: '覆盖城市' },
+  { icon: Award, value: '3+', label: '资质认证' },
+  { icon: TrendingUp, value: '8年', label: '行业经验' },
 ];
 
 export const About = () => {
@@ -14,8 +14,8 @@ export const About = () => {
     <>
       <Seo
         title="关于我们"
-        description="深圳市晶凡硕新材料科技有限公司，专注新型建筑材料研发与销售，15年行业经验，500+服务客户，致力于为客户提供高品质绿色建材解决方案。"
-        keywords={['关于晶凡硕', '企业简介', '发展历程', '企业使命', '深圳新材料', '建材公司']}
+        description="深圳市晶凡硕新材料科技有限公司，成立于2018年，专业从事新型建筑材料研发、销售与服务，主营塑胶地板、橡胶制品、建筑装饰材料等，8年行业经验，200+服务客户，致力于为客户提供高品质绿色建材解决方案。"
+        keywords={['关于晶凡硕', '企业简介', '发展历程', '企业使命', '深圳新材料', '建材公司', '塑胶地板', '建筑装饰材料']}
       />
       <div className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -34,17 +34,17 @@ export const About = () => {
               <h2 className="text-2xl font-bold text-gray-900 mb-4">企业简介</h2>
               <div className="text-gray-600 space-y-4 leading-relaxed">
                 <p>
-                  深圳市晶凡硕新材料科技有限公司成立于2009年，是一家专业从事新型建筑材料研发、生产与销售的综合性企业。
-                  经过15年的发展，我们已成为国内领先的绿色建材供应商之一。
+                  深圳市晶凡硕新材料科技有限公司成立于2018年11月09日，是一家专业从事新型建筑材料研发、销售与服务的综合性企业。
+                  经过8年的发展，我们已成为华南地区知名的绿色建材供应商之一。
                 </p>
                 <p>
-                  公司主营水泥、钢材、砂石、瓷砖等各类建筑材料，产品广泛应用于住宅、商业、
-                  基础设施等各类工程项目。我们始终坚持"品质为本、服务至上"的经营理念，
+                  公司主营塑胶地板、橡胶制品、建筑装饰材料等各类新型建材产品，产品广泛应用于住宅、商业、
+                  公共设施等各类工程项目。我们始终坚持"品质为本、服务至上"的经营理念，
                   致力于为客户提供优质的产品和专业的服务。
                 </p>
                 <p>
-                  目前，公司已在全国30多个城市建立了销售网络，服务客户超过500家，
-                  与众多知名房地产开发商、建筑企业建立了长期战略合作关系。
+                  公司总部位于深圳市宝安区，拥有专业的技术团队和完善的售后服务体系，
+                  已为超过200家客户提供了优质的产品和服务，与众多知名企业建立了长期战略合作关系。
                 </p>
               </div>
             </motion.div>
@@ -106,8 +106,8 @@ export const About = () => {
               <div className="space-y-8">
                 <div className="flex flex-col md:flex-row items-center">
                   <div className="md:w-1/2 md:text-right mb-4 md:mb-0 md:pr-8">
-                    <h3 className="text-xl font-bold text-gray-900">2009年</h3>
-                    <p className="text-gray-600">公司成立，开始建材贸易业务</p>
+                    <h3 className="text-xl font-bold text-gray-900">2018年</h3>
+                    <p className="text-gray-600">公司正式成立，落户深圳宝安，开启建材贸易新篇章</p>
                   </div>
                   <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white text-sm font-bold z-10">
                     1
@@ -120,14 +120,14 @@ export const About = () => {
                     2
                   </div>
                   <div className="md:w-1/2 md:pl-8">
-                    <h3 className="text-xl font-bold text-gray-900">2014年</h3>
-                    <p className="text-gray-600">业务拓展至10个省市</p>
+                    <h3 className="text-xl font-bold text-gray-900">2019年</h3>
+                    <p className="text-gray-600">成立关联公司，业务范围进一步扩大</p>
                   </div>
                 </div>
                 <div className="flex flex-col md:flex-row items-center">
                   <div className="md:w-1/2 md:text-right mb-4 md:mb-0 md:pr-8">
-                    <h3 className="text-xl font-bold text-gray-900">2018年</h3>
-                    <p className="text-gray-600">年销售额突破10亿元</p>
+                    <h3 className="text-xl font-bold text-gray-900">2021年</h3>
+                    <p className="text-gray-600">完成办公地址升级，扩大仓储物流能力</p>
                   </div>
                   <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white text-sm font-bold z-10">
                     3
@@ -141,7 +141,7 @@ export const About = () => {
                   </div>
                   <div className="md:w-1/2 md:pl-8">
                     <h3 className="text-xl font-bold text-gray-900">2024年</h3>
-                    <p className="text-gray-600">成为行业领先的绿色建材供应商</p>
+                    <p className="text-gray-600">深耕华南市场，成为区域领先的建材供应商</p>
                   </div>
                 </div>
               </div>
